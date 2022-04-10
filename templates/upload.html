@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <link rel="canonical" href="https://getbootstrap.com/docs/3.4/examples/jumbotron-narrow/">
+
+  <title>柚健康-提交收集</title>
+
+
+  <!-- <link href= "{{ url_for('static', filename = 'assets/vendor/aos/aos.css') }}" rel="stylesheet">
+    <link href= "{{ url_for('static', filename = 'assets/vendor/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet">
+    <link href= "{{ url_for('static', filename = 'assets/vendor/bootstrap-icons/bootstrap-icons.css') }}" rel="stylesheet">
+    <link href= "{{ url_for('static', filename = 'assets/vendor/boxicons/css/boxicons.min.css') }}" rel="stylesheet">
+    <link href= "{{ url_for('static', filename = 'assets/vendor/glightbox/css/glightbox.min.css') }}" rel="stylesheet">
+    <link href= "{{ url_for('static', filename = 'assets/vendor/remixicon/remixicon.css') }}" rel="stylesheet">
+    <link href= "{{ url_for('static', filename = 'assets/vendor/swiper/swiper-bundle.min.css') }}" rel="stylesheet">-->
+
+
+
+  <!-- Bootstrap core CSS -->
+  <link href="static/bootstrap.css" rel="stylesheet">
+
+  <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+  <link href="static/ie10-viewport-bug-workaround.css" rel="stylesheet">
+
+  <!-- Custom styles for this template -->
+  <link href="static/jumbotron-narrow.css" rel="stylesheet">
+
+  <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
+  <!--[if lt IE 9]><script src="https://fastly.jsdelivr.net/npm/@bootcss/v3.bootcss.com@1.0.35/assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
+  <script src="static/ie-emulation-modes-warning.js"></script>
+
+  <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+  <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+
+<body>
+
+  <div class="container">
+    <div class="header clearfix">
+      <h3 class="text-muted">柚健康</h3>
+    </div>
+
+    <div class="row marketing">
+      <h1>提交信息</h1>
+      <h2>{{project}}</h2>
+      <form action="/upload" method="post" enctype="multipart/form-data">
+        <div class="form-group">
+          <label for="name">姓名</label>
+          <input class="form-control" name="name" id="name" required>
+        </div>
+        <div class="form-group">
+          <label for="sid">学号</label>
+          <input class="form-control" name="sid" id="sid" required>
+        </div>
+        <div class="hidden">
+          <input name="pid" id="pid" value="{{pid}}">
+        </div>
+        <div class="{{JKMishidden}}">
+          <label for="JKMFile" accept="image/*" required>上传天府健康通健康码截图<a href="static/sample/jkm.jpg" target="_blank">查看示例</a></label>
+          <input type="file" name="JKMFile" id="JKMFile">
+        </div>
+        <div class="{{HSishidden}}">
+          <label for="HSFile" accept="image/*" required>上传天府健康通核酸截图<a href="static/sample/hs.jpg" target="_blank">查看示例</a></label>
+          <input type="file" name="HSFile" id="HSFile">
+        </div>
+        <div>{{tips}}</div>
+        <button id="subbtn" type="submit" class="btn btn-default" onclick='document.getElementById("subbtn").disabled=ture;'>提交</button>
+      </form>
+    </div>
+
+    <footer class="footer">
+      <p>© 2022 SWPU, SCPClab. Star me on <a href="https://github.com/xiazhuozhao/youjiankang">Github</a></p>
+    </footer>
+
+  </div> <!-- /container -->
+
+
+  <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+  <script src="static/ie10-viewport-bug-workaround.js"></script>
+
+
+</body>
+
+</html>
